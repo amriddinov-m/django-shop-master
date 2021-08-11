@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bigray</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+
+    <div class="container">
+        <div class="row p-1">
+            <div class="col-12 col-sm-6 col-md-3 py-1 text-center">
+                <a href="/"><img class="img-fluid" src="img/logo.jpg" alt="The Big Ray"></a></div>
+            <div class="col-12 col-sm-6 col-md-3 pt-3">
+                <div id="searchTermWrapper">
+                    <form action="/site/search" method="get">
+                        <input id="SimpleSearchForm_SearchTerm" class="searchbox form-control" type="text" name="search"
+                               placeholder="Поиск" autocomplete="off">
+                        <button class="btn btn-link searchbtn link_button" role="button" type="submit"
+                                aria-label="Search" title="Поиск"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <nav class="nav col-12 col-sm-6 col-md-4 pt-2 justify-content-between">
+          <span class="nav-link header__links" style="font-size:12px;">
+               <a href="#" style="font-size:14px;">
+                   <strong><i class="fa fa-phone-square"></i> 8 (495) 374-85-89</strong>
+               </a>
+              <a href="#" style="font-size:15px;">
+                   <strong><i class="fa fa-envelope"></i> info@thebigray.ru</strong>
+               </a>
+              <br>
+              <strong>Пн-Пт:</strong> с 09:00 до 19:00 |
+              <strong>Сб-Вс:</strong> с 10:00 до 18:00
+          </span>
+                <div class="pt-3">
+                    <a href="#">
+                        <button class="btn position-relative p-1"><i class="fa fa-align-left link_icon"></i></button>
+                    </a>
+                </div>
+            </nav>
+            <div class="col-12 col-sm-6 col-md-2  pt-1 minicart-container text-center">
+                <div class="row minicart-section">
+                    <div class="col-8 col-sm-9 minicart-icon text-center">
+                        <a href="/cart" role="button" aria-label="Корзина" class="pull-left link_shop_icon">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart4" fill="currentColor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                            </svg>
+                        </a>
+                        <div id="minishopcart_total" class="blog_text">
+                            <span class="chosen">2</span> выбрано
+                        </div>
+                        <div id="minishopcart_total_price" class="blog_text">
+                            <span class="sum">92580</span> <i class="fs-16 fa fa-rouble"></i>
+                        </div>
+
+                    </div>
+                    <div class="col-4 col-sm-3 summary text-center">
+                        <a href="/cart" role="button" aria-label="Корзина" class="pull-left link_shop_icon_2">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-plus"
+                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM12.5 1a.5.5 0 0 1 .5.5V3h1.5a.5.5 0 0 1 0 1H13v1.5a.5.5 0 0 1-1 0V4h-1.5a.5.5 0 0 1 0-1H12V1.5a.5.5 0 0 1 .5-.5z"/>
+                            </svg>
+                        </a>
+                        <!--phone modal-->
+                        <div class="modal fade" id="phomeModal" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalScrollableTitle">
+                                            <i class="fa fa-phone-square"></i> Заказать звонок </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+
+                                    <form id="phoneForm">
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label>Как к вам обращаться? </label>
+                                                    <input type="text" class="form-control" name="client_name"
+                                                           placeholder="">
+                                                </div>
+                                                <div class="col">
+                                                    <label> Номер телефона:</label>
+                                                    <input type="text" class="form-control" id="phoneNumber"
+                                                           name="client_phone" placeholder="">
+                                                    <small id="passwordHelpInline" class="text-muted">
+                                                        Пример: + 7 (495) 215-51-32 </small>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" class="btn btn-secondary btn-block"
+                                                            data-dismiss="modal">
+                                                        Отменить
+                                                    </button>
+                                                </div>
+                                                <div class="col">
+                                                    <input type="submit" class="btn btn-primary btn-block"
+                                                           value="  Запросить">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <script>
+                                        $('#phoneNumber').inputmask("+7 (999) 999-99-99");
+
+
+                                        $('#phoneForm').on('submit', function (e) {
+                                            e.preventDefault();
+                                            $.ajax({
+                                                type: 'post',
+                                                url: 'https://thebigray.ru/site/getphone',
+                                                data: $('#phoneForm').serialize(),
+                                                success: function () {
+                                                    alert('Запрос успешно отправлен!');
+                                                    document.getElementById("phoneForm").reset();
+                                                }
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <!--phone modal-->
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+
+                <div class="modal fade cart-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" style="padding: 5px 20px;">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Ваша корзина</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body cart-modal-body">
+
+                            </div>
+                            <div class="modal-footer">
+                                <a type="button" class="btn btn-primary btn-block mt-0" style="color:#fff;"
+                                   data-toggle="modal" data-target=".cart-modal">
+                                    Продолжить</a>
+                                <a type="button" href="/cart/index" class="btn btn-success btn-block mt-0">
+                                    В корзину </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-light navbar_header">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav text_navbar">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="navbar_text">Каталолг товаров</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item dropdown_first" href="#">Кондиционеры</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Вентиляция</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Воздухоочистели</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Отопление</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Расходные и крепежные материалы</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Аксессуары</a>
+                        <div class="dropdown-divider"></div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><span class="navbar_text">Услуги</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><span class="navbar_text">Бренды</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="yellowblock py-2 mb-2">
+    <div class="container">
+        <div class="">
+            <a href="" target="_blank">
+                <img class="img-fluid" src="img/bigray.png" alt="The Big Ray"></a>
+        </div>
+    </div>
+</section>
+<section class="mb-3" style="height: 300px;overflow: hidden;">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-9" style="margin: 0;padding: 0;">
+                <div id="slideshow-main">
+                    <ul id="slideshow-list">
+                        <li style="display: list-item;">
+
+                            <img class="img-fluid" src="img/slide_bigray.jpg"
+                                 alt="Tax Time! Upgrade Now!                                 ">
+
+                            <a href="#" target="_blank">
+                                Купить </a>
+                        </li>
+                        <li style="display: list-item; opacity: 0.00885637;">
+
+                            <img class="img-fluid" src="img/slide_bigray_2.webp" alt="Create Banslider">
+
+                            <a href="https://kun.uz/" target="_blank">
+                                Купить </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3" style="margin: 0;padding: 0;">
+                <ul id="image-list">
+                    <li class="active">
+                        Tax Time! Upgrade Now!
+                    </li>
+                    <li class="">
+                        Create Banslider
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="blueblock mb-3">
+    <div class="container">
+
+        <div class="row mb-2">
+            <div class="col-12 pt-2">
+                <a href="" target="_blank">
+                    <img src="img/blueblock_1.png" class="img-fluid radius-10"></a>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-4 col-sm-4">
+                <a href="" target="_blank">
+                    <img src="img/blueblock_2.png" class="img-fluid radius-10"></a>
+            </div>
+            <div class="col-4 col-sm-4">
+                <a href="" target="_blank">
+                    <img src="img/blueblock_3.png" class="img-fluid radius-10"></a>
+            </div>
+            <div class="col-4 col-sm-4">
+                <a href="" target="_blank">
+                    <img src="img/blueblock_4.png" class="img-fluid radius-10"></a>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-4 col-sm-4">
+                <a href="" target="_blank">
+                    <img src="img/blueblock_5.png" class="img-fluid radius-10"></a>
+            </div>
+        </div>
+
+
+        <div class="row mb-2">
+        </div>
+
+
+    </div>
+</section>
+<section>
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col-6 col-sm product-container">
+                <div class="product-tile">
+                    <div class="product-tile-thumb text-center">
+                        <a href="#"><img src="img/conditsioner_1.png"></a>
+                    </div>
+                    <div class="product-compare text-center my-3">
+                        <label class="form-check-label">
+                            <input class="form-check-input compare-product" type="checkbox" value="100190"> Сравнить
+                        </label>
+                    </div>
+
+                    <div class="product-info clearfix">
+
+                        <a href="#" class="product-tile-name">
+                            <span class="fs-16">Mitsubishi Electric Standart Inverter </span><br>MSZ-GF71VE / MUZ-GF71VE
+                        </a>
+                        <div class="product-tile-model text-secondary">Артикул: 100190</div>
+                        <div class="product-tile-price">
+                            <span class="pricepoint-price">
+                                <i class="curr fa fa-rub"></i> 108700<i class="dec"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row product-tile-footer m-0">
+                        <div class="col-3 text-center">
+                            <p class="product-rating">0</p>
+                            <p class="rating-text">Рейтинг</p>
+                        </div>
+                        <div class="col-9 pt-1">
+                            <a href="#" class="read_comments">Читать отзывы</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm product-container">
+                <div class="product-tile">
+                    <div class="product-tile-thumb text-center">
+                        <a href="#"><img src="img/conditsioner_1.png"></a>
+                    </div>
+                    <div class="product-compare text-center my-3">
+                        <label class="form-check-label">
+                            <input class="form-check-input compare-product" type="checkbox" value="100190"> Сравнить
+                        </label>
+                    </div>
+
+                    <div class="product-info clearfix">
+
+                        <a href="#" class="product-tile-name">
+                            <span class="fs-16">Mitsubishi Electric Standart Inverter </span><br>MSZ-GF71VE / MUZ-GF71VE
+                        </a>
+                        <div class="product-tile-model text-secondary">Артикул: 100190</div>
+                        <hr class="line_product"/>
+                        <div class="product-tile-price">
+                            <span class="pricepoint-price">
+                                <i class="curr fa fa-rub"></i> 23000<i class="dec"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row product-tile-footer m-0">
+                        <div class="col-3 text-center">
+                            <p class="product-rating">0</p>
+                            <p class="rating-text">Рейтинг</p>
+                        </div>
+                        <div class="col-9 pt-1">
+                            <a href="#" class="read_comments">Читать отзывы</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm product-container">
+                <div class="product-tile">
+                    <div class="product-tile-thumb text-center">
+                        <a href="#"><img src="img/conditsioner_1.png"></a>
+                    </div>
+                    <div class="product-compare text-center my-3">
+                        <label class="form-check-label">
+                            <input class="form-check-input compare-product" type="checkbox" value="100190"> Сравнить
+                        </label>
+                    </div>
+
+                    <div class="product-info clearfix">
+
+                        <a href="#" class="product-tile-name">
+                            <span class="fs-16">Mitsubishi Electric Standart Inverter </span><br>MSZ-GF71VE / MUZ-GF71VE
+                        </a>
+                        <div class="product-tile-model text-secondary">Артикул: 100190</div>
+                        <hr class="line_product"/>
+                        <div class="product-tile-price">
+                            <span class="pricepoint-price">
+                                <i class="curr fa fa-rub"></i> 462890<i class="dec"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row product-tile-footer m-0">
+                        <div class="col-3 text-center">
+                            <p class="product-rating">0</p>
+                            <p class="rating-text">Рейтинг</p>
+                        </div>
+                        <div class="col-9 pt-1">
+                            <a href="#" class="read_comments">Читать отзывы</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm product-container">
+                <div class="product-tile">
+                    <div class="product-tile-thumb text-center">
+                        <a href="#"><img src="img/conditsioner_1.png"></a>
+                    </div>
+                    <div class="product-compare text-center my-3">
+                        <label class="form-check-label">
+                            <input class="form-check-input compare-product" type="checkbox" value="100190"> Сравнить
+                        </label>
+                    </div>
+
+                    <div class="product-info clearfix">
+
+                        <a href="#" class="product-tile-name">
+                            <span class="fs-16">Mitsubishi Electric Standart Inverter </span><br>MSZ-GF71VE / MUZ-GF71VE
+                        </a>
+                        <div class="product-tile-model text-secondary">Артикул: 100190</div>
+                        <hr class="line_product"/>
+                        <div class="product-tile-price">
+                            <span class="pricepoint-price">
+                                <i class="curr fa fa-rub"></i> 220156<i class="dec"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row product-tile-footer m-0">
+                        <div class="col-3 text-center">
+                            <p class="product-rating">0</p>
+                            <p class="rating-text">Рейтинг</p>
+                        </div>
+                        <div class="col-9 pt-1">
+                            <a href="#" class="read_comments">Читать отзывы</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="feed-div">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <img src="img/feed_img.png" class="img-fluid">
+            </div>
+            <div class="col-sm-4 pt-1">
+                <h5 class="feed-label"> Подпишись на скидки</h5>
+
+                <form class="row" id="letterForm">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" name="client_email"
+                               aria-label="Введите email адрес ...">
+                        <div class="input-group-prepend">
+                            <button type="button" class="btn btn-success">
+                                Отправить
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container pt-2 pb-2">
+    <ul class="feed-list">
+        <li><b>DISCLAIMER:</b> Компания THE BIG RAY многие годы успешно работает в сфере общеобменной вентиляции и
+            кондиционирования воздуха.
+            Весь ассортимент нашего магазина – сертифицированная техника, которая поставляется напрямую от
+            заводов-производителей.
+        </li>
+        <li> Приобретая оборудование для дома, коттеджа, квартиры, офиса и коммерческих помещений у THE BIG RAY, вы не
+            просто покупаете кондиционер.
+        </li>
+        <li>Консультации и советы опытных менеджеров, правильная транспортировка заказа, мастерство и профессионализм
+            монтажной бригады,
+            качество используемых материалов и инструментов при монтаже – преимущества работы с командой THE BIG RAY.
+        </li>
+    </ul>
+</div>
+<footer>
+    <section class="bg-gray py-4">
+        <div class="container">
+            <div class="footer-logo mb-4">
+                <a href="/"><img class="img-fluid" src="img/logo.jpg" alt="The Big Ray"></a></div>
+            <div class="row">
+                <div class="col-12 col-sm-3 footer-list">
+                    <h4 class="shoponline">О Нас</h4>
+                    <ul>
+                        <li><a href="#/">О Нас</a></li>
+                        <li><a href="#">Реквизиты</a></li>
+                        <li><a href="#">Оплата</a></li>
+                        <li><a href="#">Сертификаты</a></li>
+                        <li><a href="#">Гарантия</a></li>
+                        <li><a href="#">Доставка</a></li>
+                        <li><a href="#">Услуги</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-3 footer-list">
+                    <h4 class="shoponline">Полезные ссылки</h4>
+                    <ul>
+                        <li><a href="#">Доставка и самовывоз</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-3 footer-list">
+                    <h4 class="shoponline">Топ бренды</h4>
+                    <ul>
+
+                        <li><a href="#">Mitsubishi Electric</a></li>
+                        <li><a href="#">Panasonic</a></li>
+                        <li><a href="#">Toshiba</a></li>
+                        <li><a href="#">Mitsubishi Heavy Industries</a></li>
+                        <li><a href="#">Midea</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-3 footer-list">
+                    <h4 class="customer-service">Контакты</h4>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-phone"></i> 8 (495) 374-85-89 </a></li>
+                        <li><a href="#"><i class="fa fa-envelope-open"></i> info@thebigray.ru</a></li>
+                    </ul>
+                    <h4 class="customer-service">Режим работы</h4>
+                    <ul>
+                        <li><strong>Пн - Пт -</strong> с 09:00 до 19:00</li>
+                        <li><strong>Сб - Вс - </strong> с 10:00 до 18:00</li>
+                    </ul>
+                    <div class="position-relative">
+                        <div class="social-media row clearfix pt-2 pb-4">
+                            <div class="col-2">
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-facebook" aria-hidden="true">&nbsp;</i>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a href="javascript:void(0);" target="_blank">
+                                    <i class="fa fa-twitter" aria-hidden="true">&nbsp;</i>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a href="javascript:void(0);" target="_blank">
+                                    <i class="fa fa-pinterest-p" aria-hidden="true">&nbsp;</i>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a href="javascript:void(0);" target="_blank">
+                                    <i class="fa fa-google-plus" aria-hidden="true">&nbsp;</i>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a href="javascript:void(0);" target="_blank">
+                                    <i class="fa fa-youtube" aria-hidden="true">&nbsp;</i>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a href="javascript:void(0);" target="_blank">
+                                    <i class="fa fa-instagram" aria-hidden="true">&nbsp;</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="clearfix col-12 col-sm-4 footer-list">
+                    <h4 class="customer-service">Покупай быстро и безопасно</h4>
+                    <div class="footer-png-sprite footer-img-shop-fast"><img src="img/visa_card.png" height="90"><img
+                            src="img/master_card.png" height="50" style="margin-left: 30px;">&nbsp;
+                    </div>
+                </div>
+                <div class="clearfix col-12 col-sm-4 footer-list">
+                    <h4 class="customer-service">Удобная оплата</h4>
+                    <div class="footer-png-sprite footer-img-shop-fast"><img src="img/visa_card_3.png" height="55"
+                                                                             style=" margin-top: 20px"><img
+                            src="img/visa_card_2.jpg" height="50" style="margin-left: 30px; margin-top: 20px">&nbsp;
+                    </div>
+                </div>
+                <div class="clearfix col-12 col-sm-4 footer-list">
+                    <h4 class="customer-service">Наши награды</h4>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <img style="height:70px;" src="img/footer_logo.png">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-lg-9 pt-2">
+                    <span class="smallprint text-size-120">The Big Ray - Exclusive Distributor of air conditioners in Moscow</span>
+                </div>
+                <div class="col-sm-4 col-lg-3 text-right">
+                    <button type="button" class="btn btn-outline-light totop"
+                            onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back To Top
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+<button type="button" class="btn btn-outline-light hide_button look_ele"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+    <i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></button>
+</body>
+</html>

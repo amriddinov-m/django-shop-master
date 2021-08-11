@@ -1,0 +1,12 @@
+{% extends 'admin/change_list.html' %}
+
+{% block object-tools %}
+
+    <div>
+        <a href="/admin/other/project/importer" onclick="window.open('/admin/other/project/importer/', '_self')" class="grp-add-link grp-state-focus">
+            Импорт Товаров/Цен
+        </a>
+    </div>
+    <br />
+    {{ block.super }}
+{% endblock %}
